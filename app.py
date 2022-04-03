@@ -57,7 +57,7 @@ def delete(sno):
     mail = Mail.query.filter_by(sno = sno).first()
     db.session.delete(mail)
     db.session.commit()
-    return redirect("/")
+    return render_template("about.html")
 
 @app.route('/update/<int:sno>',methods = ['GET','POST'])
 def update(sno):

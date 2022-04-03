@@ -50,14 +50,14 @@ def mail():
 
 @app.route('/about')
 def about():
-    return redirect("/")
+    return render_template("about.html")
 
 @app.route('/delete/<int:sno>')
 def delete(sno):
     mail = Mail.query.filter_by(sno = sno).first()
     db.session.delete(mail)
     db.session.commit()
-    return render_template("about.html")
+    return redirect("/")
 
 @app.route('/update/<int:sno>',methods = ['GET','POST'])
 def update(sno):

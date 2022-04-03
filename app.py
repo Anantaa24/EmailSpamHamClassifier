@@ -48,10 +48,9 @@ def mail():
 
 
 
-@app.route('/product')
-def products():
-    allemail = Mail.query.all()
-    return 'this is products page'
+@app.route('/about')
+def about():
+    return render_template('update.html')
 
 @app.route('/delete/<int:sno>')
 def delete(sno):

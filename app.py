@@ -50,7 +50,7 @@ def mail():
 
 @app.route('/about')
 def about():
-    return render_template('update.html')
+    return redirect("/")
 
 @app.route('/delete/<int:sno>')
 def delete(sno):
